@@ -26,7 +26,7 @@
  */
 
 #if HOTENDS > 2 || E_STEPPERS > 2
-  #error "Overlord supports up to 2 hotends / E steppers."
+  #error "Overlord Controller supports up to 2 hotends / E-steppers. Comment out this line to continue."
 #endif
 
 #include "env_validate.h"
@@ -49,7 +49,7 @@
   #define Z_MIN_PROBE_PIN                     46  // JP4, Tfeed1
 #endif
 
-#ifndef FIL_RUNOUT_PIN
+#if ENABLED(FILAMENT_RUNOUT_SENSOR)
   #define FIL_RUNOUT_PIN                      44  // JP3, Tfeed2
 #endif
 
